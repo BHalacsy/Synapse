@@ -1,17 +1,36 @@
 # Dependencies
-/node_modules
-/.pnp
+node_modules/
+.pnp/
 .pnp.js
 
-# Production / Build
-/dist
-/tmp
-/out-tsc
+# Build outputs & caches
+dist/
+build/
+out/
+tmp/
+out-tsc/
+.turbo/
+*.tsbuildinfo
+
+# Local SQLite databases & durable state
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+.synapse/
+.synapse-data/
+
+# Environment files
+.env
+.env.*
+!.env.example
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # IDEs and editors
 .idea/

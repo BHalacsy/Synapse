@@ -1,14 +1,20 @@
 {
-  "name": "Synapse",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "name": "synapse-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@12.21.0",
   "scripts": {
-    "build": "tsc"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "check-types": "turbo check-types",
+    "lint": "turbo lint",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules apps/*/dist packages/*/dist apps/*/.turbo packages/*/.turbo .turbo"
   },
-  "dependencies": {},
   "devDependencies": {
-    "typescript": "^5.5.3"
-  },
-  "private": true
+    "@biomejs/biome": "^2.6.8",
+    "turbo": "^2.4.4",
+    "typescript": "^5.7.3"
+  }
 }

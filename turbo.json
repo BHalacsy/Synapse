@@ -1,0 +1,23 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["DATABASE_URL", "PORT", "HOST", "BACKEND_WS_URL", "DATA_DIR"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "lint": {
+      "inputs": ["src/**", "*.ts", "*.json", "$TURBO_ROOT/biome.json"]
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
