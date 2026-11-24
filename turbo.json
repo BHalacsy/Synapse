@@ -11,7 +11,10 @@
       "persistent": true
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": ["^build", "^check-types"]
+    },
+    "test": {
+      "cache": false
     },
     "lint": {
       "inputs": ["src/**", "*.ts", "*.json", "$TURBO_ROOT/biome.json"]
